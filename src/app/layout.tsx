@@ -1,3 +1,4 @@
+import Header from '@/components/layout/Header';
 import './globals.css';
 
 export default function RootLayout({
@@ -8,8 +9,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <p>Global Layout</p>
-        {children}
+        <div className="container mx-auto px-10 bg-black max-w-[800px] min-h-screen">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );

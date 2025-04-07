@@ -7,14 +7,11 @@ const Searchbar = () => {
   const [input, setInput] = useState('');
   const router = useRouter();
   const searchParams = useSearchParams();
+  const q = searchParams.get('q');
 
   useEffect(() => {
-    const q = searchParams.get('q');
-
-    if (!q) return;
-
-    setInput(q);
-  }, []);
+    setInput(q || '');
+  }, [q]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -30,16 +27,22 @@ const Searchbar = () => {
 
   return (
     <>
-      <input
-        className="border rounded-[5px] pl-2"
-        onChange={handleSearchChange}
-        value={input}
-        type="text"
-        onKeyDown={handleSearchClick}
-      />
-      <button className="border ml-1 px-1 bg-gray-500 rounded-[5px]" onClick={handleSearchClick}>
-        검색
-      </button>
+      <div className="flex gap-[15px] pb-16">
+        <input
+          className="flex-2 border-2 border-gray-500 rounded-[5px] p-[8px] bg-white outline-none focus:border-red-800"
+          onChange={handleSearchChange}
+          value={input}
+          type="text"
+          placeholder="영화 이름을 검색해주세요"
+          onKeyDown={handleSearchClick}
+        />
+        <button
+          className="w-[80px] px-2 border-gray-500 bg-white  border-2 rounded-[5px] hover:bg-red-800 hover:border-red-800"
+          onClick={handleSearchClick}
+        >
+          검색
+        </button>
+      </div>
     </>
   );
 };
