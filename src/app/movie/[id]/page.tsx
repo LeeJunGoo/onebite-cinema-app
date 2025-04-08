@@ -1,8 +1,13 @@
-import movieList from '@/app/dummy.json';
+import fetchMovies from '@/lib/fetchMovies';
+import { MovieData } from '@/types';
 
 const MoviePage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
-  const movie = movieList[0];
+
+  const movie = await fetchMovies<MovieData>({ type: 'detail', id });
+  if (!movie) return <div>영화 정보를 불러오지 못했습니다.</div>;
+
+  console.log('first');
 
   return (
     <div className="text-white flex flex-col gap-5">

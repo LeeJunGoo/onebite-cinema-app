@@ -11,7 +11,7 @@ const Searchbar = () => {
 
   useEffect(() => {
     setInput(q || '');
-  }, [q]);
+  }, []);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
