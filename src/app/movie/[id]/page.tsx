@@ -1,13 +1,30 @@
 import fetchMovies from '@/lib/fetchMovies';
 import { MovieData } from '@/types';
 
+export const generateStaticParams = async () => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`);
+    if (!res.ok) return [];
+
+    const result: MovieData[] = await res.json();
+    const movies = result.map((item) => {
+      return { id: item.id.toString() };
+    });
+
+    return movies;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
+export const dynamicParams = false;
+
 const MoviePage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
 
   const movie = await fetchMovies<MovieData>({ type: 'detail', id });
   if (!movie) return <div>영화 정보를 불러오지 못했습니다.</div>;
-
-  console.log('first');
 
   return (
     <div className="text-white flex flex-col gap-5">

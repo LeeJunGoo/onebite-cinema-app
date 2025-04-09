@@ -2,6 +2,12 @@
 
 ## Ver. 1.3.0 (2025.04.08)
 
+- main Page: Static Page로 설정
+- search Page: Dynamic Page로 설정
+- movie Page: generateStaticParams, dynamicParams 사용하여 Static Page로 설정
+
+## Ver. 1.3.0 (2025.04.08)
+
 - main, search, movie 배포 서버 연결
 - main, search, movie 데이터 캐시 설정
 

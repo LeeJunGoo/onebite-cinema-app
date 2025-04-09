@@ -20,7 +20,7 @@ const fetchMovies = async <T>({ type, q, id }: FetchProps): Promise<T | null> =>
     }
 
     if (type === 'search') {
-      res = await fetch(url + `/search?q=${q}`, { cache: 'force-cache' });
+      res = await fetch(url + `/search?q=${q}`, { cache: 'no-store' });
     }
 
     if (type === 'detail') {
