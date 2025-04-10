@@ -1,6 +1,10 @@
 # Onebite Cinema
 
-## Ver. 1.3.0 (2025.04.08)
+## Ver. 1.5.0 (2025.04.10)
+
+- Dynamic Page인 search Page의 Suspense 설정
+
+## Ver. 1.4.0 (2025.04.09)
 
 - main Page: Static Page로 설정
 - search Page: Dynamic Page로 설정

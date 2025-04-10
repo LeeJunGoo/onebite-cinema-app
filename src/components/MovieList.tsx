@@ -1,7 +1,5 @@
-import React from 'react';
-
-import MovieItem from './MovieItem';
 import { MovieData } from '@/types';
+import MovieItem from './MovieItem';
 
 const MovieList = ({ movieList, className }: { movieList: MovieData[]; className: string }) => {
   return (
