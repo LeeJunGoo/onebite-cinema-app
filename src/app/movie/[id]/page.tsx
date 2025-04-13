@@ -27,7 +27,7 @@ const MoviePage = async ({ params }: { params: Promise<{ id: string }> }) => {
   if (!movie) return <div>영화 정보를 불러오지 못했습니다.</div>;
 
   return (
-    <div className="text-white flex flex-col gap-5">
+    <div className="text-white flex flex-col gap-5 pb-10">
       <section
         style={{ backgroundImage: `url(${movie.posterImgUrl})` }}
         className="w-full h-[500px] bg-cover bg-no-repeat bg-center backdrop-brightness-50"

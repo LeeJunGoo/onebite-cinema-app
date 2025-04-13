@@ -9,3 +9,5 @@ export type MovieData = {
   runtime: number;
   posterImgUrl: string;
 };
+
+export type SkeletonProps = { container: string; img: { width: number; height: number } };

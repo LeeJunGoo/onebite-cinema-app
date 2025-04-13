@@ -11,10 +11,10 @@ const SearchResult = async ({ q }: { q: string }) => {
 
   return (
     <>
-      {searchMovies.length === 0 ? (
+      {searchMovies!.length === 0 ? (
         <div className="text-white">해당 영화 정보가 없습니다.</div>
       ) : (
-        <MovieList movieList={searchMovies} className="w-[calc(33.3%-20px)]" />
+        <MovieList movieList={searchMovies!} className="w-[calc(33.3%-20px)]" />
       )}
     </>
   );

@@ -1,5 +1,10 @@
 # Onebite Cinema
 
+## Ver. 1.6.0 (2025.04.11)
+
+- main Page Suspense 적용
+- main, search Page의 스켈레톤 UI 적용 (react-loading-skeleton 라이브러리 사용)
+
 ## Ver. 1.5.0 (2025.04.10)
 
 - Dynamic Page인 search Page의 Suspense 설정

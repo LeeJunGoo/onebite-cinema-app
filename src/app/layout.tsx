@@ -13,7 +13,6 @@ export default function RootLayout({
         <div className="container mx-auto px-10 bg-black max-w-[800px] min-h-screen">
           <Header />
           {children}
-          <Footer />
         </div>
       </body>
     </html>
