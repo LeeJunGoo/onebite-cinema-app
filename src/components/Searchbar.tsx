@@ -1,6 +1,5 @@
 'use client';
 
-import { delay } from '@/util/delay';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 

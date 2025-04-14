@@ -1,5 +1,5 @@
-import AllMovies from '@/components/AllMovies';
-import RecoMovies from '@/components/RecoMovies';
+import AllMovies from '@/components/home/AllMovies';
+import RecoMovies from '@/components/home/RecoMovies';
 import MovieListSkeleton from '@/skeleton/MovieListSkeleton';
 import { Suspense } from 'react';
 

@@ -5,3 +5,9 @@
     cursor: pointer;
   }
 }
+
+input,
+textarea,
+select {
+  @apply focus:outline-none;
+}

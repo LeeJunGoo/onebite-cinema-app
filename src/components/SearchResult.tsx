@@ -1,7 +1,7 @@
+import MovieList from '@/components/home/MovieList';
 import fetchMovies from '@/lib/fetchMovies';
 import { MovieData } from '@/types';
 import { delay } from '@/util/delay';
-import MovieList from './MovieList';
 
 const SearchResult = async ({ q }: { q: string }) => {
   const searchMovies = await fetchMovies<MovieData[]>({ type: 'search', q });

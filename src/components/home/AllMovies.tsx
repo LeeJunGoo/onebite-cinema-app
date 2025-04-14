@@ -1,8 +1,7 @@
 import fetchMovies from '@/lib/fetchMovies';
 import { MovieData } from '@/types';
-import React from 'react';
-import MovieList from './MovieList';
 import { delay } from '@/util/delay';
+import MovieList from './MovieList';
 
 const AllMovies = async () => {
   await delay(2700);
