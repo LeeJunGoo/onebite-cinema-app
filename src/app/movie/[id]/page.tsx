@@ -1,7 +1,10 @@
 import MovieDetail from '@/components/detail/MovieDetail';
 import ReviewEditor from '@/components/detail/ReviewEditor';
 import ReviewList from '@/components/detail/ReviewList';
+import MovieBoundary from '@/components/common/MovieBoundary';
 import { MovieData } from '@/types';
+import { Suspense } from 'react';
+import ReviewListSkeleton from '@/skeleton/ReviewListSkeleton';
 
 export const generateStaticParams = async () => {
   try {
@@ -27,9 +30,27 @@ const MoviePage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div className="flex flex-col gap-10 text-white">
-      <MovieDetail id={id} />
+      <MovieBoundary
+        fallback={
+          <div className="h-[200px] border-2 flex justify-center items-center">
+            <h3 className="text-[22px]">⚠️ 오류가 발생했습니다.</h3>
+          </div>
+        }
+      >
+        <MovieDetail id={id} />
+      </MovieBoundary>
       <ReviewEditor id={id} />
-      <ReviewList id={id} />
+      <MovieBoundary
+        fallback={
+          <div className="h-[200px] border-2 flex justify-center items-center">
+            <h3 className="text-[22px]">⚠️ 오류가 발생했습니다.</h3>
+          </div>
+        }
+      >
+        <Suspense fallback={<ReviewListSkeleton count={5} />}>
+          <ReviewList id={id} />
+        </Suspense>
+      </MovieBoundary>
     </div>
   );
 };

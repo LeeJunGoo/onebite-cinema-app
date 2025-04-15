@@ -1,15 +1,27 @@
-import { createReviewAction } from '@/actions/review-action';
+'use client';
 
-const ReviewEditor = async ({ id }: { id: string }) => {
+import { createReviewAction } from '@/actions/review-action';
+import { useActionState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+
+const ReviewEditor = ({ id }: { id: string }) => {
+  const [state, formAction, isPending] = useActionState(createReviewAction, null);
+
+  useEffect(() => {
+    if (state && !state.status) toast.error(state.message);
+    if (state && state.status) toast.success(state.message);
+  }, [state]);
+
   return (
     <section>
-      <form action={createReviewAction}>
+      <form action={formAction}>
         <input name="movieId" value={id} readOnly hidden />
         <textarea
           name="content"
           className="w-full h-[80px] border-2 border-gray-800 rounded-[3px] p-2 text-[14px] focus:border-sky-400 resize-none"
           placeholder="리뷰를 남겨주세요"
           required
+          disabled={isPending}
         ></textarea>
         <div className="flex justify-end gap-3">
           <input
@@ -17,12 +29,16 @@ const ReviewEditor = async ({ id }: { id: string }) => {
             className="border-2 border-gray-800 rounded-[3px] p-2 text-[14px] focus:border-sky-400"
             placeholder="작성자 이름을 입력해주세요"
             required
+            disabled={isPending}
           />
           <button
-            className="border-2 border-gray-800 rounded-[5px] p-2 text-[13px] bg-white text-black font-bold hover:border-sky-400 active:bg-sky-400"
+            className={`border-2 border-gray-800 rounded-[5px] p-2 text-[13px] bg-white text-black font-bold ${
+              !isPending ? 'hover:border-sky-400 active:bg-sky-400' : ''
+            } `}
             type="submit"
+            disabled={isPending}
           >
-            작성하기
+            {isPending ? '작성중..' : '작성하기'}
           </button>
         </div>
       </form>

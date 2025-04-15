@@ -1,5 +1,17 @@
 # Onebite Cinema
 
+## Ver. 1.8.0 (2025.04.15)
+
+- serverAction을 통해 영화 리뷰 Delete 적용
+- serverAction에 revalidateTag 적용
+- useActionState를 사용하여 상태 관리
+- toast 라이브러리 적용
+
+- 영화 상세페이지의 error.tsx 적용
+- serverAction을 통해 영화 리뷰의 Create 적용
+- 영화 리뷰의 데이터 불러오기
+- 영화 리뷰 UI 생성
+
 ## Ver. 1.7.0 (2025.04.14)
 
 - 영화 상세페이지의 error.tsx 적용

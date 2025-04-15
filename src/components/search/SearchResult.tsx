@@ -4,14 +4,14 @@ import { MovieData } from '@/types';
 import { delay } from '@/util/delay';
 
 const SearchResult = async ({ q }: { q: string }) => {
-  const searchMovies = await fetchMovies<MovieData[]>({ type: 'search', q });
   await delay(1000);
 
-  if (!searchMovies) return <div>영화 정보를 불러오지 못했습니다.</div>;
+  const searchMovies = await fetchMovies<MovieData[]>({ type: 'search', q });
 
   return (
     <>
-      {searchMovies!.length === 0 ? (
+      <h2 className="pb-3">검색 결과: {q}</h2>
+      {searchMovies.length === 0 ? (
         <div className="text-white">해당 영화 정보가 없습니다.</div>
       ) : (
         <MovieList movieList={searchMovies!} className="w-[calc(33.3%-20px)]" />

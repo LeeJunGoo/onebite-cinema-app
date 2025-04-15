@@ -4,6 +4,7 @@ import ReviewItem from './ReviewItem';
 
 const ReviewList = async ({ id }: { id: string }) => {
   const reviews = await getReviews<ReviewData>(id);
+
   return (
     <section>
       <ol className="divide-y-2 divide-gray-800 flex flex-col">

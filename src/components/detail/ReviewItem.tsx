@@ -1,8 +1,9 @@
 import { ReviewData } from '@/types';
 import { IoTrashOutline } from 'react-icons/io5';
+import ReviewDeleteButton from './ReviewDeleteButton';
 
 const ReviewItem = ({ item }: { item: ReviewData }) => {
-  const { content, author, createdAt } = item;
+  const { id, content, author, createdAt, movieId } = item;
   return (
     <li className="text-[14px] flex flex-col gap-4 p-5">
       <div className="flex gap-2">
@@ -14,7 +15,7 @@ const ReviewItem = ({ item }: { item: ReviewData }) => {
       </div>
       <div className="flex items-center gap-1">
         <IoTrashOutline />
-        <button>리뷰 삭제하기</button>
+        <ReviewDeleteButton reviewId={id} movieId={movieId} />
       </div>
     </li>
   );

@@ -1,7 +1,7 @@
+import Searchbar from '@/components/common/Searchbar';
 import Footer from '@/components/layout/Footer';
-import Searchbar from '@/components/Searchbar';
 import SearchBarSkeleton from '@/skeleton/SearchBarSkeleton';
-import React, { ReactNode, Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 const SearchBarLayout = ({ children }: { children: ReactNode }) => {
   return (

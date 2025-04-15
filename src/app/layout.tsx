@@ -1,6 +1,6 @@
 import Header from '@/components/layout/Header';
 import './globals.css';
-import Footer from '@/components/layout/Footer';
+import { Toaster } from 'react-hot-toast';
 
 export default function RootLayout({
   children,
@@ -14,6 +14,18 @@ export default function RootLayout({
           <Header />
           {children}
         </div>
+        <Toaster
+          position="top-left"
+          reverseOrder={true}
+          toastOptions={{
+            style: {
+              fontSize: '0.875rem',
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            },
+          }}
+        />
       </body>
     </html>
   );

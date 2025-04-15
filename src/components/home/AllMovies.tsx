@@ -7,10 +7,9 @@ const AllMovies = async () => {
   await delay(2700);
   const allMovies = await fetchMovies<MovieData[]>({ type: 'all' });
 
-  if (!allMovies) return <div>영화 정보를 불러오지 못했습니다.</div>;
   return (
     <>
-      <MovieList movieList={allMovies!} className="w-[calc(20%-24px)]" />
+      <MovieList movieList={allMovies} className="w-[calc(20%-24px)]" />
     </>
   );
 };

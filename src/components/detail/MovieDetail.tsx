@@ -5,7 +5,6 @@ import React from 'react';
 const MovieDetail = async ({ id }: { id: string }) => {
   const movie = await fetchMovies<MovieData>({ type: 'detail', id });
 
-  if (!movie) return <div>영화 정보를 불러오지 못했습니다.</div>;
   return (
     <section className="flex flex-col gap-5">
       <div
