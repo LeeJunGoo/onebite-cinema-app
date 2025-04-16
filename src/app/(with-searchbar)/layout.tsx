@@ -10,7 +10,6 @@ const SearchBarLayout = ({ children }: { children: ReactNode }) => {
         <Searchbar />
       </Suspense>
       {children}
-      <Footer />
     </>
   );
 };

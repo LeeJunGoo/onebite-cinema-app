@@ -1,5 +1,9 @@
 # Onebite Cinema
 
+## Ver. 1.9.0 (2025.04.16)
+
+-영화 상세페이지를 Parallel, Intercepting Route을 사용하여 모달창으로 구현
+
 ## Ver. 1.8.0 (2025.04.15)
 
 - serverAction을 통해 영화 리뷰 Delete 적용
