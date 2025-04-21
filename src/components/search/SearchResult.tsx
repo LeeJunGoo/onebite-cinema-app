@@ -1,11 +1,8 @@
 import MovieList from '@/components/home/MovieList';
 import fetchMovies from '@/lib/fetchMovies';
 import { MovieData } from '@/types';
-import { delay } from '@/util/delay';
 
 const SearchResult = async ({ q }: { q: string }) => {
-  await delay(1000);
-
   const searchMovies = await fetchMovies<MovieData[]>({ type: 'search', q });
 
   return (
@@ -14,7 +11,7 @@ const SearchResult = async ({ q }: { q: string }) => {
       {searchMovies.length === 0 ? (
         <div className="text-white">해당 영화 정보가 없습니다.</div>
       ) : (
-        <MovieList movieList={searchMovies!} className="w-[calc(33.3%-20px)]" />
+        <MovieList movieList={searchMovies} className="w-[calc(33.3%-20px)]" />
       )}
     </>
   );

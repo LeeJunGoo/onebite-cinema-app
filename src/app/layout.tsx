@@ -1,8 +1,8 @@
-import Header from '@/components/layout/Header';
-import './globals.css';
-import { Toaster } from 'react-hot-toast';
+import ToastContainer from '@/components/common/ToastContainer';
 import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
 import { ReactNode } from 'react';
+import './globals.css';
 
 export default function RootLayout({
   children,
@@ -23,18 +23,7 @@ export default function RootLayout({
           </div>
         </div>
         <div id="modal-root"></div>
-        <Toaster
-          position="top-left"
-          reverseOrder={true}
-          toastOptions={{
-            style: {
-              fontSize: '0.875rem',
-              borderRadius: '10px',
-              background: '#333',
-              color: '#fff',
-            },
-          }}
-        />
+        <ToastContainer />
       </body>
     </html>
   );

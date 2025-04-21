@@ -8,9 +8,21 @@ const ReviewEditor = ({ id }: { id: string }) => {
   const [state, formAction, isPending] = useActionState(createReviewAction, null);
 
   useEffect(() => {
-    if (state && !state.status) toast.error(state.message);
-    if (state && state.status) toast.success(state.message);
+    if (state && !state.status) toast.error(state.message, { id });
+    if (state && state.status) {
+      toast.success(state.message, {
+        id,
+      });
+    }
   }, [state]);
+
+  useEffect(() => {
+    if (isPending) {
+      toast.loading('처리 중입니다.', {
+        id,
+      });
+    }
+  }, [isPending]);
 
   return (
     <section>
