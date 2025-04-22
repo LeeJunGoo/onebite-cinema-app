@@ -1,10 +1,13 @@
 import Searchbar from '@/components/common/Searchbar';
-import { ReactNode } from 'react';
+import SearchBarSkeleton from '@/skeleton/SearchBarSkeleton';
+import { ReactNode, Suspense } from 'react';
 
 const SearchBarLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <Searchbar />
+      <Suspense fallback={<SearchBarSkeleton />}>
+        <Searchbar />
+      </Suspense>
       {children}
     </>
   );

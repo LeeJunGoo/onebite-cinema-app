@@ -3,9 +3,9 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="min-h-[120px] flex justify-center items-center">
+    <header className="min-h-[150px] flex justify-center items-center">
       <h1>
-        <Link href={'/'} className="font-bold text-[30px] text-[#e50914]">
+        <Link href={'/'} className="font-bold text-[25px] xs:text-[30px] text-[#e50914]">
           ONEBITE CINEMA
         </Link>
       </h1>

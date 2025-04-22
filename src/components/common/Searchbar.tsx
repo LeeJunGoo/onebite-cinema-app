@@ -27,9 +27,9 @@ const Searchbar = () => {
 
   return (
     <>
-      <div className="flex gap-[15px] pb-16">
+      <div className="flex gap-[15px] pb-16 text-[13px] ">
         <input
-          className="flex-2 border-2 border-gray-500 rounded-[5px] p-[8px] bg-white outline-none focus:border-red-800"
+          className="flex-1 border-2 border-gray-500 rounded-[5px] p-[8px] bg-white outline-none focus:border-red-800"
           onChange={handleSearchChange}
           value={input}
           type="text"

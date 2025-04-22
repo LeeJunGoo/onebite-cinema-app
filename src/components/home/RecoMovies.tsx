@@ -9,7 +9,10 @@ const RecoMovies = async () => {
 
   return (
     <>
-      <MovieList movieList={randomMovies!} className="w-[calc(33.3%-20px)]" />
+      <MovieList
+        movieList={randomMovies!}
+        className="w-full h-[315px] sm:w-[calc(33.3%-20px)] sm:h-[170px] md:h-[315px] "
+      />
     </>
   );
 };
