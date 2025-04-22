@@ -1,5 +1,16 @@
 import AllMovies from '@/components/home/AllMovies';
 import RecoMovies from '@/components/home/RecoMovies';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '한입 시네마',
+  description: '한입 시네마에 등록된 영화를 만나보세요.',
+  openGraph: {
+    title: '한입 시네마',
+    description: '한입 시네마에 등록된 영화를 만나보세요',
+    images: ['/public/thumbnail.png'],
+  },
+};
 
 export default async function Home() {
   return (

@@ -2,9 +2,27 @@ import MovieBoundary from '@/components/common/MovieBoundary';
 import MovieDetail from '@/components/detail/MovieDetail';
 import ReviewEditor from '@/components/detail/ReviewEditor';
 import ReviewList from '@/components/detail/ReviewList';
+import fetchMovies from '@/lib/fetchMovies';
 import ReviewListSkeleton from '@/skeleton/ReviewListSkeleton';
 import { MovieData } from '@/types';
+import { Metadata } from 'next';
 import { Suspense } from 'react';
+
+export const generateMetadata = async ({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> => {
+  const { id } = await params;
+
+  const movie = await fetchMovies<MovieData>({ type: 'detail', id });
+
+  return {
+    title: `${movie.title} - 한입 시네마`,
+    description: `${movie.description}`,
+    openGraph: {
+      title: `${movie.title} - 한입 북스`,
+      description: `${movie.description}`,
+      images: [movie.posterImgUrl],
+    },
+  };
+};
 
 export const generateStaticParams = async () => {
   try {

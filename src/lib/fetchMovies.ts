@@ -30,7 +30,7 @@ const fetchMovies = async <T>({ type, q, id }: FetchProps): Promise<T> => {
   }
 
   if (!isFetch) throw new Error('URL Type이 잘못 되었습니다.');
-  if (!res!.ok) throw new Error('영화 정보를 불러오지 못 했습니다.');
+  if (!res!.ok) throw new Error(`영화 정보를 불러오지 못했습니다.: ${res?.statusText}`);
   return await res!.json();
 };
 
