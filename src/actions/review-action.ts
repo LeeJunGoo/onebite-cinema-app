@@ -1,7 +1,6 @@
 'use server';
 
 import { createReview, deleteReview } from '@/lib/fetchReviews';
-import { delay } from '@/util/delay';
 import { revalidateTag } from 'next/cache';
 
 export const createReviewAction = async (_: any, formData: FormData) => {
@@ -11,7 +10,6 @@ export const createReviewAction = async (_: any, formData: FormData) => {
 
   if (!movieId || !content || !author) return { status: false, message: '리뷰 내용과 작성자를 올바르게 입력해주세요' };
 
-  await delay(1000);
   const result = await createReview({ movieId, content, author });
 
   if (!result) return { status: false, message: '리뷰가 정삭적으로 저장되지 않았습니다.' };
@@ -31,7 +29,6 @@ export async function transitionRevalidate(movieId: number) {
 export const deleteReviewAction = async (reviewId: number, movieId: number, _: any, formData: FormData) => {
   if (!reviewId || !movieId) return { status: false, message: '삭제하려는 리뷰이 존재하지 않습니다.' };
 
-  await delay(2000);
   const result = await deleteReview(reviewId.toString());
 
   if (!result) return { status: false, message: '리뷰가 정삭적으로 삭제되지 않았습니다.' };
