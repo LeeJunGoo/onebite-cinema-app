@@ -49,8 +49,8 @@ const MoviePage = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <div className="flex flex-col gap-10 text-white">
       <MovieDetail id={id} />
-      <ReviewEditor id={id} />
-      <MovieBoundary
+      {/* <ReviewEditor id={id} /> */}
+      {/* <MovieBoundary
         fallback={
           <div className="h-[200px] border-2 flex justify-center items-center">
             <h3 className="text-[22px]">⚠️ 오류가 발생했습니다.</h3>
@@ -60,7 +60,7 @@ const MoviePage = async ({ params }: { params: Promise<{ id: string }> }) => {
         <Suspense fallback={<ReviewListSkeleton count={5} />}>
           <ReviewList id={id} />
         </Suspense>
-      </MovieBoundary>
+      </MovieBoundary> */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { FetchProps } from '@/types';
 
 const fetchMovies = async <T>({ type, q, id }: FetchProps): Promise<T> => {
-  let url = `${process.env.NEXT_PUBLIC_API_LOCAL_SERVER_URL}/movie`;
+  let url = `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`;
   let res;
   let isFetch = false;
 

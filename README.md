@@ -1,5 +1,10 @@
 # Onebite Cinema
 
+## Ver. 2.0.0 (2025.04.22)
+
+- 이미지 최적화
+- 메타 데이터 설정
+
 ## Ver. 1.9.0 (2025.04.16)
 
 -영화 상세페이지를 Parallel, Intercepting Route을 사용하여 모달창으로 구현
